@@ -1,0 +1,233 @@
+<!-- <!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body style="background-color:white";>
+    
+    <nav style="width: 100%; height: 100%;">   
+    <h1 style="text-align: center;"><b>WELCOME TO IGNITZ IT SOLUTIONS</b></h1>
+
+    <div style="width:100%; height: 60px; text-align: center; background-color:skyblue;">
+        <h1 style="display: inline-block; "><b>Home</b></h1>
+        <h1 style="display: inline-block; margin-left: 100px;"><b>Student Register</b></h1>
+        <h1 style="display: inline-block; margin-left: 100px;"><b>Course Details</b></h1>
+        <h1 style="display: inline-block; margin-left: 100px;"><b>Attendance</b></h1>
+    </div>
+
+    <div class="container" style="text-align: center;">
+        <form method="post">
+        {{form.as_p}}
+        {% csrf_token %}
+            <input type="submit" class="btn btn-primary" name="" value="submit">
+        </form>
+        </div>
+    
+</body>
+</html> -->
+
+
+
+<!-- 
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attendance</title>
+    <style>
+        body {
+            background-color: white;
+        }
+        nav {
+            width: 100%;
+            height: 100%;
+            display:flex;
+            align-items: center;
+            justify-content: last baseline;
+            flex-wrap: wrap;
+            background-color: rgb(234, 238, 239);
+        }
+        h1 {
+            margin: 0;
+            font-weight: bold;
+        }
+        .logo {
+            width: 15%;
+            text-align: center;
+        }
+        .menu-item {
+            width: 20%;
+            text-align: right;
+        }
+        .menu-item a {
+            text-decoration: none;
+            color: black;
+        }
+        .menu-item a:hover {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <div class="logo">
+            <img src="{% static 'images/logo.jpeg' %}" alt="Image not found">
+        </div>
+        <div class="menu-item">
+            <h1><a href="{% url 'home' %}">Home</a></h1>
+        </div>
+        <div class="menu-item">
+            <h1><a href="{% url 'registration' %}">Registration</a></h1>
+        </div>
+        <div class="menu-item">
+            <h1><a href="{% url 'attendance' %}">Attendance</a></h1>
+        </div>
+        <div class="menu-item">
+            <h1><a href="#">Course Details</a></h1>
+        </div>
+        <div class="container" style="text-align: right; width:55%;">
+            <form method="post">
+            {{form.as_p}}
+            {% csrf_token %}
+                <input type="submit" class="btn btn-primary" name="" value="submit">
+            </form>
+            </div>
+
+    </nav>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <style>
+        body {
+            background-image: url("{% static 'images/attendance.jpg' %}");
+            background-repeat: no-repeat;
+            background-size:cover; 
+            background-position: center; 
+            background-attachment: fixed; 
+            font-family: Arial, sans-serif;
+            margin: 0; 
+            padding: 0;
+        }
+        nav {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: last baseline;
+            flex-wrap: wrap;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        h1 {
+            margin: 0;
+            font-weight: bold;
+        }
+        .logo {
+            width: 15%;
+            text-align: center;
+        }
+        .menu-item {
+            width: 20%;
+            text-align: right;
+        }
+        .menu-item a {
+            text-decoration: none;
+            color: black;
+        }
+        .menu-item a:hover {
+            color: blue;
+        }
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 500px;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <div class="logo">
+            <img src="{% static 'images/logo.jpeg' %}" alt="Image not found">
+        </div>
+        <div class="menu-item">
+            <h1><a href="{% url 'home' %}">Home</a></h1>
+        </div>
+        <div class="menu-item">
+            <h1><a href="{% url 'registration' %}">Registration</a></h1>
+        </div>
+        <div class="menu-item">
+            <h1><a href="{% url 'attendance' %}">Attendance</a></h1>
+        </div>
+        <!-- <div class="menu-item">
+            <h1><a href="#">Course Details</a></h1>
+        </div> -->
+        <div class="menu-item">
+            <h1><a href="{% url 'student_details' %}">student Details</a></h1>
+        </div>
+    </nav>
+    
+    <div class="form-container">
+        <h2>Attendance Form</h2>
+        <form method="post">
+            {{form.as_p}}
+            {% csrf_token %}
+            <!-- <label for="student_id" class="form-label">Student ID:</label>
+            <input type="text" id="student_id" name="student_id" class="form-input" required>
+
+            <label for="student_name" class="form-label">Student Name:</label>
+            <input type="text" id="student_name" name="student_name" class="form-input" required>
+
+            <label for="present_date" class="form-label">Present Date:</label>
+            <input type="date" id="present_date" name="present_date" class="form-input" required>
+
+            <label for="status" class="form-label">Status:</label>
+            <select id="status" name="status" class="form-input" required>
+                <option value="present">Present</option>
+                <option value="absent">Absent</option>
+            </select> -->
+
+            <button type="submit" class="form-button">Submit Attendance</button>
+        </form>
+    </div>
+
+</body>
+</html> 
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student_details</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Attendance_details List</h1>
+    
+    {% if Attendance_list %}
+    <table>
+        <thead>
+            <tr>
+                <th>Student_Id</th>
+                <th>Student_Names</th>
+                <th>Present_Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        {% for Attendance in Attendance_list %}
+        <tr>
+            <td>{{Attendance.Student_Id}}</td>
+            <td>{{Attendance.Student_Names}}</td>
+            <td>{{Attendance.Present_Date}}</td>
+            <td>{{Attendance.Status}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    {% else %}
+    <p>NO records found </p>
+    {% endif %}
+</body>
+</html>

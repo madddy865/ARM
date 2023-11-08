@@ -1,0 +1,127 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student_details</title>
+</head>
+<body>
+    <h1>Student_details List</h1>
+    
+    {% if Student_list %}
+    <table>
+        <thead>
+            <th>Candidate_Name</th>
+            <th>Father_Name</th>
+            <th>Referred_By</th>
+            <th>Date_Of_Birth</th>
+            <th>Mobile_number</th>
+            <th>Email_Id</th>
+            <th>Hometown</th>
+            <th>Qualification</th>
+            <th>College_name</th>
+            <th>Stream</th>
+            <th>Btech_Percentage</th>
+            <th>Passed_out_year</th>
+            <th>Any_Backlogs</th>
+
+        </thead>
+
+        {% for Student in Student_list %}
+        <tr>
+            <th>{{Student.Candidate_Name}}</th>
+            <th>{{Student.Father_Name}}</th>
+            <th>{{Student.Referred_By}}</th>
+            <th>{{Student.Date_Of_Birth}}</th>
+            <th>{{Student.Mobile_number}}</th>
+            <th>{{Student.Email_Id}}</th>
+            <th>{{Student.Hometown}}</th>
+            <th>{{Student.Qualification}}</th>
+            <th>{{Student.College_name}}</th>
+            <th>{{Studnet.Stream}}</th>
+            <th>{{Student.Btech_Percentage}}</th>
+            <th>{{Student.Passed_out_year}}</th>
+            <th>{{Student.Any_Backlogs}}</th>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    {%else%}
+    <p>NO records found </p>
+    {%endif%}
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student_details</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student_details List</h1>
+    
+    {% if Student_list %}
+    <table>
+        <thead>
+            <tr>
+                <th>Candidate_Name</th>
+                <th>Father_Name</th>
+                <th>Referred_By</th>
+                <th>Date_Of_Birth</th>
+                <th>Mobile_Number</th>
+                <th>Email_Id</th>
+                <th>Hometown</th>
+                <th>Qualification</th>
+                <th>College_name</th>
+                <th>Stream</th>
+                <th>Btech_Percentage</th>
+                <th>Passed_out_year</th>
+                <th>Any_Backlogs</th>
+            </tr>
+        </thead>
+
+        {% for Student in Student_list %}
+        <tr>
+            <td>{{Student.Candidate_Name}}</td>
+            <td>{{Student.Father_Name}}</td>
+            <td>{{Student.Referred_By}}</td>
+            <td>{{Student.Date_Of_Birth}}</td>
+            <td>{{Student.Mobile_Number}}</td>
+            <td>{{Student.Email_Id}}</td>
+            <td>{{Student.Hometown}}</td>
+            <td>{{Student.Qualification}}</td>
+            <td>{{Student.College_name}}</td>
+            <td>{{Student.Stream}}</td>
+            <td>{{Student.Btech_Percentage}}</td>
+            <td>{{Student.Passed_out_year}}</td>
+            <td>{{Student.Any_Backlogs}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    {% else %}
+    <p>NO records found </p>
+    {% endif %}
+</body>
+</html>
